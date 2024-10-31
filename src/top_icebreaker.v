@@ -47,10 +47,10 @@ module top
    always @(posedge CLK) begin
       begin
 	 if (rst == 1'b1) begin
-	    rst_delayed_n <= 1'b1;
+	    rst_delayed_n <= 1'b0;
 	    rst_delay_counter <= 0;
 	 end else if (rst_delay_counter[DELAY_BIT] == 1'b1) begin
-	    rst_delayed_n <= 1'b0;
+	    rst_delayed_n <= 1'b1;
 	 end else begin
             rst_delay_counter <= rst_delay_counter + 1;
 	 end

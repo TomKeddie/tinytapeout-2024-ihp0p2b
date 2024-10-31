@@ -24,7 +24,6 @@ module tb ();
       .ui_in  (8'b0),    // Dedicated inputs
       .uio_in (8'b0),    // IOs: Input path
       .uo_out(uo_out),   // IOs: Output path
-      .uio_oe (1'b0),
       .ena    (1'b1),    // enable - goes high when design is selected
       .clk    (clk),     // clock
       .rst_n  (rst_n)    // not reset

@@ -155,11 +155,11 @@ module uart_tx (
           tx_pin1_int = 1'b0; // start
           tx_pin2_int = 1'b0; // start
         end
-//	2       : begin
-//          tx_pin0_int = 1'b0; // high bit
-//          tx_pin1_int = 1'b0; // high bit
-//          tx_pin2_int = 1'b0; // high bit
-//	end
+	9       : begin
+          tx_pin0_int = 1'b0; // upper bit
+          tx_pin1_int = 1'b0; // upper bit
+          tx_pin2_int = 1'b0; // upper bit
+	end
         10      : begin
           tx_pin0_int = 1'b1; // stop
           tx_pin1_int = 1'b1; // stop

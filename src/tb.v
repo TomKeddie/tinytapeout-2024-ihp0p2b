@@ -10,6 +10,7 @@ module tb (
            // testbench is controlled by test.py
            input  clk,
            input  rst_n,
+           input  rst,
            output uart_tx_pin
            );
 
@@ -24,13 +25,16 @@ module tb (
    wire [7:0] uart_tx_pins;
 
    // instantiate the DUT
-   tt_um_tomkeddie_b tt_um_tomkeddie_b (
-					.ui_in  (8'b0),    // Dedicated inputs
-					.uio_in (8'b0),    // IOs: Input path
-					.uo_out(uart_tx_pins),   // IOs: Output path
-					.ena    (1'b1),    // enable - goes high when design is selected
-					.clk    (clk),     // clock
-					.rst_n  (rst_n)
-					);
+   top #(.DIVIDER(4), .DELAY_BIT(4)) top (
+	.CLK(clk),
+	.P1B1(rst),
+	.P1B2(1'b0),
+	.P1B3(1'b0),
+	.P1B4(1'b0),
+	.P1B7(1'b0),
+	.P1B8(1'b0),
+	.P1B9(1'b0),
+	.P1B10(1'b0)
+	);
 
 endmodule

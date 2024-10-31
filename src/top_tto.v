@@ -26,6 +26,9 @@ module tt_um_tomkeddie_b
    assign uio_out[0] = tx_pin0;
    assign uio_out[1] = tx_pin1;
    assign uio_out[2] = tx_pin2;
+   assign uio_out[3] = clk;
+   assign uio_out[4] = rst_n;
+   assign uio_out[5] = reset;
 
    assign reset       = !rst_n;
 
