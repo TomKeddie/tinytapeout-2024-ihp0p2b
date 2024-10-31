@@ -1,8 +1,8 @@
 module top
   #(parameter DIVIDER=5000, DELAY_BIT=15)
    (
-    // testbench is controlled by test.py
     input  CLK,
+    input  P1B1,
     input  P1B2,
     input  P1B3,
     input  P1B4,
@@ -25,7 +25,7 @@ module top
    wire [7:0] outputs = {P1A10, P1A9, P1A8, P1A7, P1A4, P1A3, P1A2, P1A1};
    reg [15:0] clk_divide_counter;
    reg [15:0] rst_delay_counter;
-   wire	      rst;
+   wire	      rst = P1B1;
    reg	      rst_delayed_n;
 
    // clock divider

@@ -3,3 +3,6 @@ top_icebreaker.asc
 top_icebreaker.bin
 top_icebreaker.json
 top_icebreaker.log
+__pycache__/
+results.xml
+sim_build/
