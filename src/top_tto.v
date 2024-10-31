@@ -18,7 +18,11 @@ module tt_um_tomkeddie_b
                                     uio_out,
                                     ui_in,
                                     1'b0};
-   
+   wire		     tx_pin0;
+   wire		     tx_pin1;
+   wire		     tx_pin2;
+   wire		     reset;
+
    assign uio_out[0] = tx_pin0;
    assign uio_out[1] = tx_pin1;
    assign uio_out[2] = tx_pin2;
@@ -29,6 +33,6 @@ module tt_um_tomkeddie_b
 		   .reset(reset),
 		   .tx_pin0(tx_pin0),
 		   .tx_pin1(tx_pin1),
-		   .tx_pin2(tx_pin2))
-      
-     endmodule
+		   .tx_pin2(tx_pin2));
+        
+endmodule
