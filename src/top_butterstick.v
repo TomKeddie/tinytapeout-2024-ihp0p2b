@@ -82,9 +82,13 @@ module top #(parameter DIVIDER=5000)
    assign SYZYGY0_PMOD1A_2   = outputs[1];
    assign SYZYGY0_PMOD1A_3   = outputs[2];
    assign SYZYGY0_PMOD1A_4   = outputs[3];
+   assign SYZYGY0_PMOD1A_7   = outputs[4];
+   assign SYZYGY0_PMOD1A_8   = outputs[5];
+   assign SYZYGY0_PMOD1A_9   = outputs[6];
+   assign SYZYGY0_PMOD1A_10  = outputs[7];
 
    // instantiate the DUT
-   tt_um_tomkeddie_b tt_um_tomkeddie_b(.ena(1'b1), .clk(clk_dut), .uio_out(outputs), .rst_n(rst_n));
+   tt_um_tomkeddie_b tt_um_tomkeddie_b(.ena(1'b1), .clk(clk_dut), .uo_out(outputs), .rst_n(rst_n));
 
    // clock divider
    always @(posedge clk_12) begin

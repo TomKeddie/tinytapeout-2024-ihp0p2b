@@ -6,13 +6,15 @@ module uart_tx (
                 output tx_pin0,
                 output tx_pin1,
                 output tx_pin2,
-                output tx_pin3
+                output tx_pin3,
+                output tx_pin4
                 );
 
-  wire [7:0]           text0 [0:45];
-  wire [7:0]           text1 [0:45];
-  wire [7:0]           text2 [0:45];
-  wire [7:0]           text3 [0:45];
+  wire [7:0]           text0 [0:49];
+  wire [7:0]           text1 [0:49];
+  wire [7:0]           text2 [0:49];
+  wire [7:0]           text3 [0:49];
+  wire [7:0]           text4 [0:49];
 
   // a couple of random things to push out a serial port
   assign text0[0]  = "T";
@@ -59,8 +61,12 @@ module uart_tx (
   assign text0[41] = " ";
   assign text0[42] = " ";
   assign text0[43] = " ";
-  assign text0[44] = "\r";
-  assign text0[45] = "\n";
+  assign text0[44] = " ";
+  assign text0[45] = " ";
+  assign text0[46] = " ";
+  assign text0[47] = " ";
+  assign text0[48] = "\r";
+  assign text0[49] = "\n";
   
   assign text1[0] = "O";
   assign text1[1] = "p";
@@ -106,8 +112,12 @@ module uart_tx (
   assign text1[41] = " ";
   assign text1[42] = " ";
   assign text1[43] = " ";
-  assign text1[44] = "\r";
-  assign text1[45] = "\n";
+  assign text1[44] = " ";
+  assign text1[45] = " ";
+  assign text1[46] = " ";
+  assign text1[47] = " ";
+  assign text1[48] = "\r";
+  assign text1[49] = "\n";
 
   assign text2[0]  = "I";
   assign text2[1]  = "'";
@@ -153,57 +163,115 @@ module uart_tx (
   assign text2[41] = "a";
   assign text2[42] = "t";
   assign text2[43] = ".";
-  assign text2[44] = "\r";
-  assign text2[45] = "\n";
-   
-  assign text3[0] = "T";
-  assign text3[1] = "e";
-  assign text3[2] = "d";
-  assign text3[3] = " ";
-  assign text3[4] = "P";
-  assign text3[5] = "a";
-  assign text3[6] = "r";
-  assign text3[7] = "k";
-  assign text3[8] = "e";
-  assign text3[9] = "r";
-  assign text3[10] = " ";
-  assign text3[11] = "2";
-  assign text3[12] = "3";
-  assign text3[13] = " ";
-  assign text3[14] = "M";
-  assign text3[15] = "a";
-  assign text3[16] = "r";
-  assign text3[17] = " ";
-  assign text3[18] = "1";
-  assign text3[19] = "9";
-  assign text3[20] = "4";
-  assign text3[21] = "2";
-  assign text3[22] = " ";
-  assign text3[23] = "-";
-  assign text3[24] = " ";
-  assign text3[25] = "1";
-  assign text3[26] = "2";
-  assign text3[27] = " ";
-  assign text3[28] = "A";
-  assign text3[29] = "p";
-  assign text3[30] = "r";
-  assign text3[31] = " ";
-  assign text3[32] = "1";
-  assign text3[33] = "9";
-  assign text3[34] = "9";
-  assign text3[35] = "5";
-  assign text3[36] = " ";
-  assign text3[36] = " ";
-  assign text3[37] = " ";
-  assign text3[38] = " ";
-  assign text3[39] = " ";
-  assign text3[40] = " ";
-  assign text3[41] = " ";
-  assign text3[42] = " ";
-  assign text3[43] = " ";
-  assign text3[44] = "\r";
-  assign text3[45] = "\n";
+  assign text2[44] = " ";
+  assign text2[45] = " ";
+  assign text2[46] = " ";
+  assign text2[47] = " ";
+  assign text2[48] = "\r";
+  assign text2[49] = "\n";
 
+  assign text3[0]  = "Y";
+  assign text3[1]  = "o";
+  assign text3[2]  = "u";
+  assign text3[3]  = " ";
+  assign text3[4]  = "a";
+  assign text3[5]  = "r";
+  assign text3[6]  = "e";
+  assign text3[7]  = " ";
+  assign text3[8]  = "i";
+  assign text3[9]  = "n";
+  assign text3[10] = " ";
+  assign text3[11] = "a";
+  assign text3[12] = " ";
+  assign text3[13] = "m";
+  assign text3[14] = "a";
+  assign text3[15] = "z";
+  assign text3[16] = "e";
+  assign text3[17] = " ";
+  assign text3[18] = "o";
+  assign text3[19] = "f";
+  assign text3[20] = " ";
+  assign text3[21] = "t";
+  assign text3[22] = "w";
+  assign text3[23] = "i";
+  assign text3[24] = "s";
+  assign text3[25] = "t";
+  assign text3[26] = "y";
+  assign text3[27] = " ";
+  assign text3[28] = "p";
+  assign text3[29] = "a";
+  assign text3[30] = "s";
+  assign text3[31] = "s";
+  assign text3[32] = "a";
+  assign text3[33] = "g";
+  assign text3[34] = "e";
+  assign text3[35] = "s";
+  assign text3[36] = ",";
+  assign text3[37] = " ";
+  assign text3[38] = "a";
+  assign text3[39] = "l";
+  assign text3[40] = "l";
+  assign text3[41] = " ";
+  assign text3[42] = "a";
+  assign text3[43] = "l";
+  assign text3[44] = "i";
+  assign text3[45] = "k";
+  assign text3[46] = "e";
+  assign text3[47] = ".";
+  assign text3[48] = "\r";
+  assign text3[49] = "\n";
+   
+  assign text4[0]  = "T";
+  assign text4[1]  = "e";
+  assign text4[2]  = "d";
+  assign text4[3]  = " ";
+  assign text4[4]  = "P";
+  assign text4[5]  = "a";
+  assign text4[6]  = "r";
+  assign text4[7]  = "k";
+  assign text4[8]  = "e";
+  assign text4[9]  = "r";
+  assign text4[10] = " ";
+  assign text4[11] = "2";
+  assign text4[12] = "3";
+  assign text4[13] = " ";
+  assign text4[14] = "M";
+  assign text4[15] = "a";
+  assign text4[16] = "r";
+  assign text4[17] = " ";
+  assign text4[18] = "1";
+  assign text4[19] = "9";
+  assign text4[20] = "4";
+  assign text4[21] = "2";
+  assign text4[22] = " ";
+  assign text4[23] = "-";
+  assign text4[24] = " ";
+  assign text4[25] = "1";
+  assign text4[26] = "2";
+  assign text4[27] = " ";
+  assign text4[28] = "A";
+  assign text4[29] = "p";
+  assign text4[30] = "r";
+  assign text4[31] = " ";
+  assign text4[32] = "1";
+  assign text4[33] = "9";
+  assign text4[34] = "9";
+  assign text4[35] = "5";
+  assign text4[36] = " ";
+  assign text4[37] = " ";
+  assign text4[38] = " ";
+  assign text4[39] = " ";
+  assign text4[40] = " ";
+  assign text4[41] = " ";
+  assign text4[42] = " ";
+  assign text4[43] = " ";
+  assign text4[44] = " ";
+  assign text4[45] = " ";
+  assign text4[46] = " ";
+  assign text4[47] = " ";
+  assign text4[48] = "\r";
+  assign text4[49] = "\n";
+   
   reg [3:0]            bit_counter;
   reg [5:0]            text_index;
   
@@ -211,10 +279,12 @@ module uart_tx (
   reg                  tx_pin1_int;
   reg                  tx_pin2_int;
   reg                  tx_pin3_int;
+  reg                  tx_pin4_int;
   assign tx_pin0 = tx_pin0_int;
   assign tx_pin1 = tx_pin1_int;
   assign tx_pin2 = tx_pin2_int;
   assign tx_pin3 = tx_pin3_int;
+  assign tx_pin4 = tx_pin4_int;
 
   always @(posedge clk) begin
     // if reset, set counter to 0
@@ -224,13 +294,14 @@ module uart_tx (
       tx_pin1_int  <= 1'b1;
       tx_pin2_int  <= 1'b1;
       tx_pin3_int  <= 1'b1;
+      tx_pin4_int  <= 1'b1;
       text_index   <= 6'b0;
     end else begin
       // bit counter - START, 8xDATA, STOP, IDLE = 11 bits
       if (bit_counter == 10) begin
         // reset
         bit_counter    <= 0;
-         if (text_index == 45) begin
+         if (text_index == 49) begin
           text_index <= 6'b0;
         end else begin
           text_index <= text_index + 1;
@@ -245,30 +316,35 @@ module uart_tx (
           tx_pin1_int = 1'b1; // idle
           tx_pin2_int = 1'b1; // idle
           tx_pin3_int = 1'b1; // idle
+          tx_pin4_int = 1'b1; // idle
         end
         1       : begin
           tx_pin0_int = 1'b0; // start
           tx_pin1_int = 1'b0; // start
           tx_pin2_int = 1'b0; // start
           tx_pin3_int = 1'b0; // start
+          tx_pin4_int = 1'b0; // start
         end
 	9       : begin
           tx_pin0_int = 1'b0; // upper bit
           tx_pin1_int = 1'b0; // upper bit
           tx_pin2_int = 1'b0; // upper bit
           tx_pin3_int = 1'b0; // upper bit
+          tx_pin4_int = 1'b0; // upper bit
 	end
         10      : begin
           tx_pin0_int = 1'b1; // stop
           tx_pin1_int = 1'b1; // stop
           tx_pin2_int = 1'b1; // stop
           tx_pin3_int = 1'b1; // stop
+          tx_pin4_int = 1'b1; // stop
         end
         default : begin
           tx_pin0_int = text0[text_index][bit_counter-2];
           tx_pin1_int = text1[text_index][bit_counter-2];
           tx_pin2_int = text2[text_index][bit_counter-2];
           tx_pin3_int = text3[text_index][bit_counter-2];
+          tx_pin4_int = text4[text_index][bit_counter-2];
         end
       endcase
     end

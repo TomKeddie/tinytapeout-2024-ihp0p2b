@@ -12,21 +12,25 @@ module tt_um_tomkeddie_b
    input wire	     rst_n
    );
 
-   wire		     _unused_ok = &{1'b0, ena, uio_in, uio_out, ui_in, 1'b0};
+   wire		     _unused_ok = &{1'b0, ena, uio_in, ui_in, 1'b0};
    wire		     tx_pin0;
    wire		     tx_pin1;
    wire		     tx_pin2;
    wire		     tx_pin3;
+   wire		     tx_pin4;
    wire		     reset;
 
-   assign uio_out[0] = tx_pin0;
-   assign uio_out[1] = tx_pin1;
-   assign uio_out[2] = tx_pin2;
-   assign uio_out[3] = tx_pin3;
-   assign uio_out[4] = 1'b0;
-   assign uio_out[5] = 1'b0;
-   assign uio_out[6] = 1'b0;
-   assign uio_out[7] = 1'b0;
+   assign uo_out[0] = tx_pin0;
+   assign uo_out[1] = tx_pin1;
+   assign uo_out[2] = tx_pin2;
+   assign uo_out[3] = tx_pin3;
+   assign uo_out[4] = tx_pin4;
+   assign uo_out[5] = 1'b0;
+   assign uo_out[6] = 1'b0;
+   assign uo_out[7] = 1'b0;
+
+   assign uio_out = 8'b0;
+   assign uio_oe  = 8'b0;
 
    assign reset       = !rst_n;
 
@@ -35,6 +39,7 @@ module tt_um_tomkeddie_b
 		   .tx_pin0(tx_pin0),
 		   .tx_pin1(tx_pin1),
 		   .tx_pin2(tx_pin2),
-		   .tx_pin3(tx_pin3));
+		   .tx_pin3(tx_pin3),
+		   .tx_pin4(tx_pin4));
         
 endmodule
